@@ -3,8 +3,8 @@ defmodule Blacklist do
   alias Blacklist.Tesla.Akismet
 
   def check(name, email, locale, user_agent, ip, data) do
-    check_blacklist("name", name) or
-    check_blacklist("email", email) or
+    check_blacklist(:name, name) or
+    check_blacklist(:email, email) or
     check_akismet(name, email, locale, user_agent, ip, data)
   end
 
