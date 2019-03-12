@@ -14,7 +14,7 @@ by adding `blacklist` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:blacklist, "~> 0.1.0"}
+    {:blacklist, "~> 0.1"}
   ]
 end
 ```
@@ -45,15 +45,15 @@ This depends on an external service and you should to configure the credentials 
 
 ```elixir
 config :blacklist, api_key: "xxxxxxxxxxxx",
-                   url: "https://..."
+                   blog: "https://..."
 ```
 
 The values are:
 
 - `api_key`: the API key provided by Akismet website.
-- `url`: the URL of your website.
+- `blog`: the URL of your website.
 
-You can use also the configuration to use a custom blacklist. The configuration for the blacklist is as follow:
+You can use also the configuration to use a custom blacklist. The configuration for the blacklist is as follow (you can merge both configurations to generate only one):
 
 ```elixir
 config :blacklist, name: [],
