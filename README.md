@@ -1,4 +1,4 @@
-# TeslaAkismet
+# Blacklist
 
 Implementation for the API available in this site: https://akismet.com/development/api/#comment-check
 
@@ -9,24 +9,24 @@ This is very useful to check if a message coming from a contact form is a _ham_ 
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `currency_convert_api` to your list of dependencies in `mix.exs`:
+by adding `blacklist` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:tesla_akismet, "~> 0.1.0"}
+    {:blacklist, "~> 0.1.0"}
   ]
 end
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/currency_convert_api](https://hexdocs.pm/currency_convert_api).
+be found at [https://hexdocs.pm/blacklist](https://hexdocs.pm/blacklist).
 
 ## Usage
 
 ```elixir
-TeslaAkismet.comment_check author, email, locale, user_agent, user_ip, content
+Blacklist.check author, email, locale, user_agent, user_ip, content
 # false
 ```
 
@@ -44,17 +44,20 @@ The result of the function will be or a boolean indicating if it's spam or not, 
 This depends on an external service and you should to configure the credentials to use it:
 
 ```elixir
-config :tesla_akismet, api_key: "xxxxxxxxxxxx"
+config :blacklist, api_key: "xxxxxxxxxxxx",
+                   url: "https://..."
 ```
 
-You can use also the configuration to use a custom blacklist through the module `TeslaAkismet.Blacklist`. This module has only one function to check the information against the blacklist configuration and if it's ok, then against the akismet service.
+The values are:
 
-The configuration for the blacklist is as follow:
+- `api_key`: the API key provided by Akismet website.
+- `url`: the URL of your website.
+
+You can use also the configuration to use a custom blacklist. The configuration for the blacklist is as follow:
 
 ```elixir
-config :tesla_akismet, :blacklist,
-  name: [],
-  email: ["@mail.ru", "@plusgmail.ru", "@seocdvig.ru"]
+config :blacklist, name: [],
+                   email: ["@mail.ru", "@plusgmail.ru", "@seocdvig.ru"]
 ```
 
 Enjoy!

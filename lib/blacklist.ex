@@ -9,12 +9,13 @@ defmodule Blacklist do
   end
 
   defp check_blacklist(name, data) do
-    blacklist = Application.get_env(:tesla_akismet, :blacklist, [])
-    check = fn(r) ->
-      {:ok, re} = Regex.compile(r)
-      Regex.match? re, data
+    blacklist = Application.get_env(:blacklist, name, [])
+    check = fn(regex) ->
+      regex
+      |> Regex.compile!()
+      |> Regex.match?(data)
     end
-    Enum.any?(blacklist[name], check)
+    Enum.any?(blacklist, check)
   end
 
   defp check_akismet(name, email, locale, user_agent, ip, data) do

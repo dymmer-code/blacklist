@@ -6,7 +6,7 @@ defmodule Blacklist.Tesla.Akismet do
 
   @default_comment_type "contact-form"
 
-  defp cfg(key), do: Application.get_env(:tesla_akismet, key, [])
+  defp cfg(key), do: Application.get_env(:blacklist, key, [])
 
   defp get_url, do: "https://#{cfg(:api_key)}.rest.akismet.com"
 
