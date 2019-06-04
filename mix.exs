@@ -4,7 +4,7 @@ defmodule Blacklist.MixProject do
   def project do
     [
       app: :blacklist,
-      version: "0.1.2",
+      version: "0.1.3",
       name: "Blacklist",
       description: "Blacklist check with Akismet API implementation using Tesla",
       package: package(),
