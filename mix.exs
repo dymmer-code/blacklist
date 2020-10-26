@@ -4,7 +4,7 @@ defmodule Blacklist.MixProject do
   def project do
     [
       app: :blacklist,
-      version: "0.1.4",
+      version: "0.2.0",
       name: "Blacklist",
       description: "Blacklist check with Akismet API implementation using Tesla",
       package: package(),
@@ -24,10 +24,10 @@ defmodule Blacklist.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:jason, ">= 1.0.0"},
-      {:tesla, "~> 1.3.3"},
+      {:jason, "~> 1.2"},
+      {:tesla, "~> 1.3"},
 
-      {:ex_doc, "~> 0.22.2", only: :dev},
+      {:ex_doc, "~> 0.23", only: :dev}
     ]
   end
 
