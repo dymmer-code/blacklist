@@ -1,4 +1,8 @@
 defmodule Blacklist do
+  @moduledoc """
+  Module for checking contact against Akismet blacklist.
+  """
+
   require Logger
   alias Blacklist.Tesla.Akismet
 

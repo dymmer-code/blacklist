@@ -1,5 +1,9 @@
 defmodule Blacklist.Tesla.Akismet do
-  use Tesla
+  @moduledoc """
+  HTTP client for Akismet.
+  """
+
+  use Tesla, only: [:get, :post], docs: false
 
   plug Tesla.Middleware.BaseUrl, get_url()
   plug Tesla.Middleware.FormUrlencoded
