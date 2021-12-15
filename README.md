@@ -1,15 +1,18 @@
 # Blacklist
 
-Implementation for the API available in this site: https://akismet.com/development/api/#comment-check
+[![hex.pm](https://img.shields.io/hexpm/v/blacklist.svg)](https://hex.pm/packages/blacklist)
+[![hexdocs.pm](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/blacklist/)
+[![hex.pm](https://img.shields.io/hexpm/dt/blacklist.svg)](https://hex.pm/packages/blacklist)
+[![hex.pm](https://img.shields.io/hexpm/l/blacklist.svg)](https://hex.pm/packages/blacklist)
+[![github.com](https://img.shields.io/github/last-commit/dymmer-code/blacklist.svg)](https://github.com/dymmer-code/blacklist/commits/master)
 
-This uses [Tesla]() library to make easier the access to the endpoint.
+Blacklist check with [Akismet API](https://akismet.com/development/api/#comment-check) implemented with [Tesla](https://hex.pm/packages/tesla).
 
 This is very useful to check if a message coming from a contact form is a _ham_ or _spam_ one.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `blacklist` to your list of dependencies in `mix.exs`:
+Add `blacklist` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -18,10 +21,6 @@ def deps do
   ]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/blacklist](https://hexdocs.pm/blacklist).
 
 ## Usage
 
